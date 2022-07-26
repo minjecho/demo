@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <link rel="stylesheet" th:href="@{css/style.css}">
+<th:block th:fragment="headerFragment">
+    <div name="header_body">
+        <a href="/main"><img src="img/home.png" width="2.5%" height="2.5%" style="float: left; margin-left: 20px; margin-right: 50px;"></a>
+        <ul id="main_menu">
+            <li>
+                <a href="#">MENU 1</a>
+                <ul id="sub_menu">
+                    <li><a href="#">Submenu1</a></li>
+                    <li><a href="#">Submenu2</a></li>
+                    <li><a href="#">Submenu3</a></li>
+                    <li><a href="#">Submenu4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">MENU 2</a>
+                <ul id="sub_menu">
+                    <li><a href="#">Submenu1</a></li>
+                    <li><a href="#">Submenu2</a></li>
+                    <li><a href="#">Submenu3</a></li>
+                    <li><a href="#">Submenu4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">MENU 3</a>
+                <ul id="sub_menu">
+                    <li><a href="#">Submenu1</a></li>
+                    <li><a href="#">Submenu2</a></li>
+                    <li><a href="#">Submenu3</a></li>
+                    <li><a href="#">Submenu4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">MENU 4</a>
+                <ul id="sub_menu">
+                    <li><a href="#">Submenu1</a></li>
+                    <li><a href="#">Submenu2</a></li>
+                    <li><a href="#">Submenu3</a></li>
+                    <li><a href="#">Submenu4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">MENU 5</a>
+                <ul id="sub_menu">
+                    <li><a href="#">Submenu1</a></li>
+                    <li><a href="#">Submenu2</a></li>
+                    <li><a href="#">Submenu3</a></li>
+                    <li><a href="#">Submenu4</a></li>
+                </ul>
+            </li>
+        </ul>
+        <a href="/"><img src="img/exit.png" id="img_right" width="2%" height="2%"></a>
+        <a href="#"><img src="img/settings.png" id="img_right" width="2%" height="2%"></a>
+        <a href="/userList"><img src="img/user.png" id="img_right" width="2%" height="2%"></a>
+        <a href="#"><img src="img/search.png" id="img_right" width="2%" height="2%"></a>
+    </div><br>
+</th:block>
+</html>

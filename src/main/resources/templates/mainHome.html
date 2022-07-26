@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf.layout">
+<head>
+    <meta charset="utf-8">
+    <title>부채결산 시스템</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div name="header">
+        <th:block th:replace="fragments/header :: headerFragment"></th:block>
+    </div><br>
+    <hr>
+    <div name="content" id="main_home">
+        <h2 th:text="${testSTR}"></h2>
+        <table id="content_table">
+            <thead>
+                <tr>
+                    <th>프로세스</th>
+                    <th>프로세스명</th>
+                    <th>진행상태</th>
+                    <th>실행횟수</th>
+                    <th>시작일시</th>
+                    <th>종료일시</th>
+                    <th>소요시간</th>
+                    <th>로그</th>
+                    <th>실행</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>4</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr>
+    <div name="footer">
+        <th:block th:replace="fragments/footer :: footerFragment"></th:block>
+    </div>
+</body>
+</html>

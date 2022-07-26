@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>부채결산 시스템</title>
+</head>
+<style>
+    #index_header{
+        text-align: center;
+    }
+
+    #index_content{
+        margin: auto;
+        text-align: center;
+    }
+
+    #login{
+        display: inline-block;
+    }
+
+    #index_footer{
+        text-align: center;
+    }
+</style>
+<body>
+    <div name="header" id="index_header"><h1 id="title">InnoLinc 부채결산 시스템</h1></div>
+    <hr>
+    <div name="content" id="index_content">
+        <form method="post" name="login" action="/main">
+            <fieldset id="login">
+                <legend align="center">Login</legend>
+                <input type="text" name="user_id" id="user_id" placeholder="아이디" required="required"></form><br>
+                <input type="password" name="user_pwd" id="user_pwd" placeholder="비밀번호" required="required"><br>
+                <input type="submit" value="로그인">
+            </fieldset>
+        </form>
+    </div>
+    <hr>
+    <div name="footer" id="index_footer">
+        <a href="/main" id="link">Main Home Page</a>
+        <p>본 페이지는 기본 Template로 만든 페이지로 모든 저작권은 (주)Fortress Innovation(포트리스 이노베이션)에게 있습니다.</p>
+    </div>
+</body>
+</html>

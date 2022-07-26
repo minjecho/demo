@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf.layout">
+<head>
+    <meta charset="utf-8">
+    <title>부채결산 시스템</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div name="header">
+        <th:block th:replace="fragments/header :: headerFragment"></th:block>
+    </div><br>
+    <hr>
+    <div name="content" id="main_home">
+        <h2>User List Page</h2>
+        <h3>값 호출 = <span th:text="${data}"></span></h3>
+    </div>
+    <hr>
+    <div name="footer">
+        <th:block th:replace="fragments/footer :: footerFragment"></th:block>
+    </div>
+</body>
+</html>
