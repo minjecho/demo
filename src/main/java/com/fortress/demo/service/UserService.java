@@ -26,12 +26,12 @@ public class UserService {
 
     private UserDTO convertEntityToDto(User user){
         return UserDTO.builder()
-            .user_no(user.getUser_no())
-            .user_id(user.getUser_id())
-            .user_pwd(user.getUser_pwd())
-            .user_dept(user.getUser_dept())
-            .user_job(user.getUser_job())
-            .user_level(user.getUser_level())
+            .userNo(user.getUserNo())
+            .userId(user.getUserId())
+            .userPwd(user.getUserPwd())
+            .userDept(user.getUserDept())
+            .userJob(user.getUserJob())
+            .userLevel(user.getUserLevel())
             .build();
     }
 
@@ -53,18 +53,18 @@ public class UserService {
 
     // 유저 1명의 정보 받기
     @Transactional
-    public UserDTO getUser(String user_id){
-        List<User> userWrapper = userRepository.findById(user_id);
+    public UserDTO getUser(String userId){
+        List<User> userWrapper = userRepository.findByUserId(userId);
         User user = userWrapper.get(0);
 
         UserDTO userDTO = UserDTO.builder()
-                        .user_no(user.getUser_no())
-                        .user_id(user.getUser_id())
-                        .user_pwd(user.getUser_pwd())
-                        .user_name(user.getUser_name())
-                        .user_dept(user.getUser_dept())
-                        .user_job(user.getUser_job())
-                        .user_level(user.getUser_level()).build();
+                        .userNo(user.getUserNo())
+                        .userId(user.getUserId())
+                        .userPwd(user.getUserPwd())
+                        .userName(user.getUserName())
+                        .userDept(user.getUserDept())
+                        .userJob(user.getUserJob())
+                        .userLevel(user.getUserLevel()).build();
         
         return userDTO;
     }
@@ -72,20 +72,20 @@ public class UserService {
     // 유저 정보 저장
     @Transactional
     public String saveUser(UserDTO userDTO){
-        return userRepository.save(userDTO.toEntity()).getUser_id();
+        return userRepository.save(userDTO.toEntity()).getUserId();
     }
 
     // 유저 탈퇴 처리
     @Transactional
-    public void deleteUser(String user_id){
-        userRepository.deleteById(user_id);
+    public void deleteUser(String userId){
+        userRepository.deleteByUserId(userId);
     }
 
     // 유저 검색
     // ID 검색
     @Transactional
     public List<UserDTO> searchID(String keyword){
-        List<User> userEntities = userRepository.findById(keyword);
+        List<User> userEntities = userRepository.findByUserId(keyword);
         List<UserDTO> userDTOList = new ArrayList<>();
 
         if(userEntities.isEmpty()) return userDTOList;
@@ -100,7 +100,7 @@ public class UserService {
     // 부서 검색
     @Transactional
     public List<UserDTO> searchDept(String keyword){
-        List<User> userEntities = userRepository.findByDept(keyword);
+        List<User> userEntities = userRepository.findByUserDept(keyword);
         List<UserDTO> userDTOList = new ArrayList<>();
 
         if(userEntities.isEmpty()) return userDTOList;
@@ -115,7 +115,7 @@ public class UserService {
     // 직급 검색
     @Transactional
     public List<UserDTO> searchJob(String keyword){
-        List<User> userEntities = userRepository.findByJob(keyword);
+        List<User> userEntities = userRepository.findByUserJob(keyword);
         List<UserDTO> userDTOList = new ArrayList<>();
 
         if(userEntities.isEmpty()) return userDTOList;
@@ -130,7 +130,7 @@ public class UserService {
     // 이름 검색
     @Transactional
     public List<UserDTO> searchName(String keyword){
-        List<User> userEntities = userRepository.findByName(keyword);
+        List<User> userEntities = userRepository.findByUserName(keyword);
         List<UserDTO> userDTOList = new ArrayList<>();
 
         if(userEntities.isEmpty()) return userDTOList;

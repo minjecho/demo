@@ -7,9 +7,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.fortress.demo.domain.User;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
-    List<User> findById(String id);
-    List<User> findByDept(String dept);
-    List<User> findByJob(String job);
-    List<User> findByName(String name);
-    void deleteById(String user_id);
+    List<User> findByUserId(String userId);
+    List<User> findByUserDept(String userDept);
+    List<User> findByUserJob(String userJob);
+    List<User> findByUserName(String userName);
+    void deleteByUserId(String userId);
 }

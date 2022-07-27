@@ -9,37 +9,37 @@ import lombok.*;
 @ToString
 @NoArgsConstructor
 public class UserDTO {
-    private int user_no;
-    private String user_id;
-    private String user_pwd;
-    private String user_name;
-    private String user_dept;
-    private String user_job;
-    private int user_level;
+    private int userNo;
+    private String userId;
+    private String userPwd;
+    private String userName;
+    private String userDept;
+    private String userJob;
+    private int userLevel;
 
     public User toEntity(){
         User user = User.builder()
-            .user_no(user_no)
-            .user_id(user_id)
-            .user_pwd(user_pwd)
-            .user_name(user_name)
-            .user_dept(user_dept)
-            .user_job(user_job)
-            .user_level(user_level)
+            .userNo(userNo)
+            .userId(userId)
+            .userPwd(userPwd)
+            .userName(userName)
+            .userDept(userDept)
+            .userJob(userJob)
+            .userLevel(userLevel)
             .build();
 
         return user;
     }
 
     @Builder
-    public UserDTO(int user_no, String user_id, String user_pwd, String user_name
-        , String user_dept, String user_job, int user_level){
-            this.user_no = user_no;
-            this.user_id = user_id;
-            this.user_pwd = user_pwd;
-            this.user_name = user_name;
-            this.user_dept = user_dept;
-            this.user_job = user_job;
-            this.user_level = user_level;
+    public UserDTO(int userNo, String userId, String userPwd, String userName
+        , String userDept, String userJob, int userLevel){
+            this.userNo = userNo;
+            this.userId = userId;
+            this.userPwd = userPwd;
+            this.userName = userName;
+            this.userDept = userDept;
+            this.userJob = userJob;
+            this.userLevel = userLevel;
     }
 }
