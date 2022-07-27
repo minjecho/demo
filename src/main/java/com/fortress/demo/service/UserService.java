@@ -2,7 +2,6 @@ package com.fortress.demo.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -55,8 +54,8 @@ public class UserService {
     // 유저 1명의 정보 받기
     @Transactional
     public UserDTO getUser(String user_id){
-        Optional<User> userWrapper = userRepository.findById(user_id);
-        User user = userWrapper.get();
+        List<User> userWrapper = userRepository.findById(user_id);
+        User user = userWrapper.get(0);
 
         UserDTO userDTO = UserDTO.builder()
                         .user_no(user.getUser_no())
@@ -86,7 +85,7 @@ public class UserService {
     // ID 검색
     @Transactional
     public List<UserDTO> searchID(String keyword){
-        List<User> userEntities = userRepository.findById2(keyword);
+        List<User> userEntities = userRepository.findById(keyword);
         List<UserDTO> userDTOList = new ArrayList<>();
 
         if(userEntities.isEmpty()) return userDTOList;

@@ -12,7 +12,26 @@
     <hr>
     <div name="content" id="main_home">
         <h2>User List Page</h2>
-        <h3>값 호출 = <span th:text="${data}"></span></h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>이름</th>
+                    <th>ID</th>
+                    <th>부서</th>
+                    <th>직급</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="user : ${userList}">
+                    <td th:text="${user.user_no}"></td>
+                    <td th:text="${user.user_name}"></td>
+                    <td th:text="${user.user_id}"></td>
+                    <td th:text="${user.user_dept}"></td>
+                    <td th:text="${user.user_job}"></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <hr>
     <div name="footer">
