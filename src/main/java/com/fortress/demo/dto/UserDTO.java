@@ -9,6 +9,7 @@ import lombok.*;
 @ToString
 @NoArgsConstructor
 public class UserDTO {
+    private Long id;
     private int userNo;
     private String userId;
     private String userPwd;
@@ -19,6 +20,7 @@ public class UserDTO {
 
     public User toEntity(){
         User user = User.builder()
+            .id(id)
             .userNo(userNo)
             .userId(userId)
             .userPwd(userPwd)
@@ -32,8 +34,9 @@ public class UserDTO {
     }
 
     @Builder
-    public UserDTO(int userNo, String userId, String userPwd, String userName
+    public UserDTO(Long id, int userNo, String userId, String userPwd, String userName
         , String userDept, String userJob, int userLevel){
+            this.id = id;
             this.userNo = userNo;
             this.userId = userId;
             this.userPwd = userPwd;

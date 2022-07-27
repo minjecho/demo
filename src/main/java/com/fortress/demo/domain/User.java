@@ -20,6 +20,8 @@ import lombok.NoArgsConstructor;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
     private int userNo;
     private String userId;
     private String userPwd;
@@ -32,7 +34,8 @@ public class User {
     private User user;
 
     @Builder
-    public User(int userNo, String userId, String userPwd, String userName, String userDept, String userJob, int userLevel){
+    public User(Long id, int userNo, String userId, String userPwd, String userName, String userDept, String userJob, int userLevel){
+        this.id = id;
         this.userNo = userNo;
         this.userId = userId;
         this.userPwd = userPwd;

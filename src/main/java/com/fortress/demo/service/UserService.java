@@ -2,6 +2,7 @@ package com.fortress.demo.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -26,6 +27,7 @@ public class UserService {
 
     private UserDTO convertEntityToDto(User user){
         return UserDTO.builder()
+            .id(user.getId())
             .userNo(user.getUserNo())
             .userId(user.getUserId())
             .userPwd(user.getUserPwd())
@@ -53,11 +55,12 @@ public class UserService {
 
     // 유저 1명의 정보 받기
     @Transactional
-    public UserDTO getUser(String userId){
-        List<User> userWrapper = userRepository.findByUserId(userId);
-        User user = userWrapper.get(0);
+    public UserDTO getUser(Long id){
+        Optional<User> userWrapper = userRepository.findById(id);
+        User user = userWrapper.get();
 
         UserDTO userDTO = UserDTO.builder()
+                        .id(user.getId())
                         .userNo(user.getUserNo())
                         .userId(user.getUserId())
                         .userPwd(user.getUserPwd())
