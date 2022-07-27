@@ -1,12 +1,9 @@
 package com.fortress.demo.domain;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AccessLevel;
@@ -23,25 +20,12 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int user_no;
 
-    @Column(length = 100, nullable = false)
     private String user_id;
-
-    @Column(length = 200, nullable = false)
     private String user_pwd;
-
-    @Column(nullable = false)
     private String user_name;
-
-    @Column(nullable = false)
     private String user_dept;
-
-    @Column(nullable = false)
     private String user_job;
-
-    @Column(nullable = false)
     private int user_level;
-
-    @OneToOne(fetch = FetchType.LAZY)
     private User user;
 
     @Builder
