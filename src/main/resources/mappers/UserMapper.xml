@@ -10,7 +10,10 @@
         <result column="userJob" property="userJob"/>
         <result column="userLevel" property="userLevel"/>
     </resultMap>
+    <!-- 전체 유저 조회 -->
     <select id="selectUserList" resultMap="user">
         select * from user order by userNo
     </select>
+    <!-- 유저 검색 기능 -->
+    <select id="searchUserList"></select>
 </mapper>

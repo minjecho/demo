@@ -8,5 +8,6 @@ import com.fortress.demo.vo.UserVO;
 
 @Mapper
 public interface UserMapper {
-    List<UserVO> selectUserList() throws Exception;
+    public List<UserVO> selectUserList() throws Exception;
+    public List<UserVO> searchUserList() throws Exception;
 }

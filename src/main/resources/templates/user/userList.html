@@ -35,6 +35,15 @@
                 </tr>
             </tbody>
         </table>
+        <form id="searchForm" action="/user/search" method="post">
+            <select name="type">
+                <option value="1">이름</option>
+                <option value="2">부서</option>
+                <option value="3">직급</option>
+            </select>
+            <input type="text" id="keyword" name="keyword" placeholder="검색">
+            <button name="search" id="search">검색</button>
+        </form>
     </div>
     <hr>
     <div name="footer">

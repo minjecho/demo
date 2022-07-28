@@ -16,4 +16,8 @@ public class UserServiceImpl implements UserService {
     public List<UserVO> selectUserList() throws Exception {
         return userMapper.selectUserList();
     }
+
+    public List<UserVO> searchUserList() throws Exception {
+        return userMapper.searchUserList();
+    }
 }
