@@ -15,5 +15,5 @@
         select * from user order by userNo
     </select>
     <!-- 유저 검색 기능 -->
-    <select id="searchUserList"></select>
+    <select id="searchUserList" resultMap="user"></select>
 </mapper>

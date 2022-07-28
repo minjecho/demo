@@ -13,11 +13,13 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
 
+    @Override
     public List<UserVO> selectUserList() throws Exception {
         return userMapper.selectUserList();
     }
 
-    public List<UserVO> searchUserList() throws Exception {
-        return userMapper.searchUserList();
+    @Override
+    public List<UserVO> searchUserList(int type, String keyword) throws Exception {
+        return userMapper.searchUserList(type, keyword);
     }
 }
