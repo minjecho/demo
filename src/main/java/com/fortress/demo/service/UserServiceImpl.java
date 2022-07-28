@@ -13,7 +13,6 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
 
-    @Override
     public List<UserVO> selectUserList() throws Exception {
         return userMapper.selectUserList();
     }
