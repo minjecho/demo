@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>부채결산 시스템</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
     <div name="header">
@@ -23,12 +23,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="user : ${userList}">
+                <tr th:if="${#lists.size(list)} > 0" th:each="user : ${list}">
                     <td th:text="${user.userNo}"></td>
                     <td th:text="${user.userName}"></td>
                     <td th:text="${user.userId}"></td>
                     <td th:text="${user.userDept}"></td>
                     <td th:text="${user.userJob}"></td>
+                </tr>
+                <tr th:unless="${#lists.size(list)} > 0">
+                    <td colspan="5">조회된 결과가 없습니다.</td>
                 </tr>
             </tbody>
         </table>

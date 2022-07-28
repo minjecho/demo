@@ -3,7 +3,7 @@
     <link rel="stylesheet" th:href="@{css/style.css}">
 <th:block th:fragment="headerFragment">
     <div name="header_body">
-        <a href="/main"><img src="img/home.png" width="2.5%" height="2.5%" style="float: left; margin-left: 20px; margin-right: 50px;"></a>
+        <a href="/main"><img src="/img/home.png" width="2.5%" height="2.5%" style="float: left; margin-left: 20px; margin-right: 50px;"></a>
         <ul id="main_menu">
             <li>
                 <a href="#">MENU 1</a>
@@ -51,10 +51,10 @@
                 </ul>
             </li>
         </ul>
-        <a href="/"><img src="img/exit.png" id="img_right" width="2%" height="2%"></a>
-        <a href="#"><img src="img/settings.png" id="img_right" width="2%" height="2%"></a>
-        <a href="#" th:href="@{/user/list}"><img src="img/user.png" id="img_right" width="2%" height="2%"></a>
-        <a href="#"><img src="img/search.png" id="img_right" width="2%" height="2%"></a>
+        <a href="/"><img src="/img/exit.png" id="img_right" width="2%" height="2%"></a>
+        <a href="#"><img src="/img/settings.png" id="img_right" width="2%" height="2%"></a>
+        <a href="" th:href="@{/user/userList}"><img src="/img/user.png" id="img_right" width="2%" height="2%"></a>
+        <a href="#"><img src="/img/search.png" id="img_right" width="2%" height="2%"></a>
     </div><br>
 </th:block>
 </html>
