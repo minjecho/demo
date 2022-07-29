@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fortress.demo.mapper.UserMapper">
+    <!-- 테이블 정의 -->
+    <resultMap id="user" type="com.fortress.demo.vo.UserVO">
+        <id column="userNo" property="userNo"/>
+        <result column="userId" property="userId"/>
+        <result column="userPwd" property="userPwd"/>
+        <result column="userName" property="userName"/>
+        <result column="userDept" property="userDept"/>
+        <result column="userJob" property="userJob"/>
+        <result column="userLevel" property="userLevel"/>
+    </resultMap>
+    <!-- 전체 유저 조회 -->
+    <select id="selectUserList" resultMap="user">
+        select * from user where not userNo = 0 order by userNo
+    </select>
+    <!-- 유저 검색 기능 -->
+    <select id="searchUserList" parameterType="java.util.HashMap" resultMap="user">
+       select * from user
+       <if test="type == 1">
+           where userName = #{keyword} order by userNo
+       </if>
+       <if test="type == 2">
+           where userDept like '%' || #{keyword} || '%' order by userNo
+       </if>
+       <if test="type == 3">
+           where userJob = #{keyword} order by userNo
+       </if>
+    </select>
+</mapper>
