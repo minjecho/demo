@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf.layout">
+<head>
+    <meta charset="utf-8">
+    <title>부채결산 시스템</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+    <div name="header">
+        <th:block th:replace="fragments/header :: headerFragment"></th:block>
+    </div><br>
+    <hr>
+    <div name="content" id="main_home">
+        <h2>User List Page</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>이름</th>
+                    <th>ID</th>
+                    <th>부서</th>
+                    <th>직급</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:if="${#lists.size(list)} > 0" th:each="user : ${list}">
+                    <td th:text="${user.userNo}"></td>
+                    <td th:text="${user.userName}"></td>
+                    <td th:text="${user.userId}"></td>
+                    <td th:text="${user.userDept}"></td>
+                    <td th:text="${user.userJob}"></td>
+                </tr>
+                <tr th:unless="${#lists.size(list)} > 0">
+                    <td colspan="5">조회된 결과가 없습니다.</td>
+                </tr>
+            </tbody>
+        </table>
+        <form id="searchForm" name="searchForm" action="/user/search" method="get">
+            <select name="type">
+                <option value="1">이름</option>
+                <option value="2">부서</option>
+                <option value="3">직급</option>
+            </select>
+            <input type="text" id="keyword" name="keyword" placeholder="검색"></input>
+            <input type="submit" value="검색"></input>
+        </form>
+    </div>
+    <hr>
+    <div name="footer">
+        <th:block th:replace="fragments/footer :: footerFragment"></th:block>
+    </div>
+</body>
+</html>
