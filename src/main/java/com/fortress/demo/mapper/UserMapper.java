@@ -11,5 +11,6 @@ import com.fortress.demo.vo.UserVO;
 public interface UserMapper {
     public List<UserVO> selectUserList() throws Exception;
     public List<UserVO> searchUserList(HashMap<String, Object> param);
+    public UserVO getUser(String insertedID);
     
 }
