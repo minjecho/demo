@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,8 +31,8 @@ public class UserController {
     }
 
     // 유저 검색
-    @GetMapping("/search")
-    public ModelAndView searchUserList(@RequestParam(value = "type") int type, @RequestParam(value = "keyword") String keyword) throws Exception{
+    @PostMapping("/search")
+    public ModelAndView searchUserList(@RequestParam int type, @RequestParam String keyword) throws Exception{
         ModelAndView mv = new ModelAndView();
         List<UserVO> list = userService.searchUserList(type, keyword);
 
