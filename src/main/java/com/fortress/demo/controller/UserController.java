@@ -35,6 +35,8 @@ public class UserController {
         ModelAndView mv = new ModelAndView();
         List<UserVO> list = userService.searchUserList(type, keyword);
 
+        System.out.println(list);
+
         mv.addObject("list", list);
         mv.setViewName("user/userList");
 

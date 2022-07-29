@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.fortress.demo.mapper.UserMapper">
+    <!-- 테이블 정의 -->
     <resultMap id="user" type="com.fortress.demo.vo.UserVO">
         <id column="userNo" property="userNo"/>
         <result column="userId" property="userId"/>
@@ -15,5 +16,16 @@
         select * from user order by userNo
     </select>
     <!-- 유저 검색 기능 -->
-    <select id="searchUserList" resultMap="user"></select>
+    <select id="searchUserList" parameterType="java.util.HashMap" resultMap="user">
+       select * from user
+       <if test="type == 1">
+           where userName = #{keyword} order by userNo
+       </if>
+       <if test="type == 2">
+           where userDept = #{keyword} order by userNo
+       </if>
+       <if test="type == 3">
+           where userJob = #{keyword} order by userNo
+       </if>
+    </select>
 </mapper>

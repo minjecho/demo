@@ -1,5 +1,6 @@
 package com.fortress.demo.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserVO> searchUserList(int type, String keyword) throws Exception {
-        return userMapper.searchUserList(type, keyword);
+        HashMap<String, Object> param = new HashMap<String, Object>();
+        param.put("type", type);
+        param.put("keyword", keyword);
+        return userMapper.searchUserList(param);
     }
 }
