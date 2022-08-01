@@ -16,7 +16,7 @@ import com.fortress.demo.vo.UserVO;
 public class LoginIDPWDValidator implements UserDetailsService {
     @Bean
     public PasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
+        return new SHA512PasswordEncoder();
     }
 
     @Autowired

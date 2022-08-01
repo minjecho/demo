@@ -28,4 +28,8 @@
            where userJob = #{keyword} order by userNo
        </if>
     </select>
+    <!-- 로그인 기능 getUser -->
+    <select id="getUser" parameterType="String" resultMap="user">
+        select * from user where userId = #{insertedID}
+    </select>
 </mapper>
